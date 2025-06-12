@@ -12,17 +12,11 @@
   "rewrites": [
     {
       "source": "/assets/(.*)",
-      "destination": "/assets/$1",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
+      "destination": "/assets/$1"
     },
     {
       "source": "/F.R.I.D.A.Y._(Marvel_Comics).jpg",
-      "destination": "/F.R.I.D.A.Y._(Marvel_Comics).jpg",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
+      "destination": "/F.R.I.D.A.Y._(Marvel_Comics).jpg"
     },
     {
       "source": "/(.*)",
@@ -30,6 +24,24 @@
     }
   ],
   "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/F.R.I.D.A.Y._(Marvel_Comics).jpg",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
